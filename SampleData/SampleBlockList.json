@@ -1,0 +1,75 @@
+[
+	{
+		"trigger": {
+			"url-filter": "^https?://.*&ctxId=.*&pubId=.*&clientDT=",
+			"resource-type": [
+				"image",
+				"style-sheet",
+				"script",
+				"font",
+				"media",
+				"raw"
+			]
+		},
+		"action": {
+			"type": "block"
+		},
+		"identifier": "www.domain.com"
+	},
+  {
+		"trigger": {
+			"url-filter": "^https?://([^/]+\\.)?amazonaws\\.com/ds-dd/data/data\\.gif\\?",
+			"resource-type": [
+				"image",
+				"style-sheet",
+				"script",
+				"font",
+				"media",
+				"raw"
+			],
+			"if-domain": [
+				"*slickdeals.net"
+			]
+		},
+		"action": {
+			"type": "block"
+		},
+        "identifier": "www.anotherdomain.com"
+	},
+	{
+		"trigger": {
+			"url-filter": "^https?://([^/]+\\.)?geo\\.query\\.yahoo\\.com",
+			"url-filter-is-case-sensitive": true,
+			"resource-type": [
+				"image",
+				"style-sheet",
+				"script",
+				"font",
+				"media",
+				"raw"
+			],
+			"unless-domain": [
+				"*mail.yahoo.com"
+			]
+		},
+		"action": {
+			"type": "block"
+		},
+        "identifier": "www.anextradomain.com"
+	},
+	{
+		"trigger": {
+			"url-filter": "^http://r\\.i\\.ua/s\\?.*&p.*&l",
+			"resource-type": [
+				"image"
+			],
+			"if-domain": [
+				"*swordmaster.org"
+			]
+		},
+		"action": {
+			"type": "ignore-previous-rules"
+		},
+        "identifier": "www.thelastdomain.com"
+	}
+  ]
